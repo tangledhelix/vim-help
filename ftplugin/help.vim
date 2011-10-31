@@ -2,14 +2,16 @@
 " Maintainer: JuanPablo <jpabloaj at gmail dot com>
 " Description: help navigation
 " Last Modified: octubre 07, 2011
+
 nnoremap <buffer> <CR> <C-]>
 nnoremap <buffer> <BS> <C-T>
-nnoremap <buffer> o /'\l\{2,\}'<CR>
-nnoremap <buffer> O ?'\l\{2,\}'<CR>
-nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
-nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
+nnoremap <buffer> o /'\l\{2,\}'<CR>:nohlsearch<CR>
+nnoremap <buffer> O ?'\l\{2,\}'<CR>:nohlsearch<CR>
+nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>:nohlsearch<CR>
+nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>:nohlsearch<CR>
 nnoremap <buffer><silent> c :call GoContent()<cr>
-nn <buffer> q ZQ
+nnoremap <buffer> q ZQ
+
 " GoContent : to content list {{{
 fun! GoContent()
 	try
@@ -20,3 +22,4 @@ fun! GoContent()
 	endtry
 endf
 " }}}
+
